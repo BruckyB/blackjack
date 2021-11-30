@@ -14,6 +14,10 @@
 		6588FF7D27551C39007B045B /* blackjack.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6588FF7B27551C39007B045B /* blackjack.xcdatamodeld */; };
 		6588FF7F27551C3D007B045B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6588FF7E27551C3D007B045B /* Assets.xcassets */; };
 		6588FF8227551C3D007B045B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6588FF8027551C3D007B045B /* LaunchScreen.storyboard */; };
+		65A78A5A27565F9F00A19229 /* MainGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A78A5927565F9F00A19229 /* MainGame.swift */; };
+		65A78A5C27565FAF00A19229 /* StatsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A78A5B27565FAF00A19229 /* StatsScreen.swift */; };
+		65A78A5E27565FC100A19229 /* RulesScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A78A5D27565FC100A19229 /* RulesScreen.swift */; };
+		65A78A6027565FD100A19229 /* OptionsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A78A5F27565FD100A19229 /* OptionsScreen.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +30,10 @@
 		6588FF7E27551C3D007B045B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6588FF8127551C3D007B045B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6588FF8327551C3D007B045B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65A78A5927565F9F00A19229 /* MainGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainGame.swift; sourceTree = "<group>"; };
+		65A78A5B27565FAF00A19229 /* StatsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsScreen.swift; sourceTree = "<group>"; };
+		65A78A5D27565FC100A19229 /* RulesScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesScreen.swift; sourceTree = "<group>"; };
+		65A78A5F27565FD100A19229 /* OptionsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionsScreen.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,10 @@
 				6588FF7227551C39007B045B /* AppDelegate.swift */,
 				6588FF7427551C39007B045B /* SceneDelegate.swift */,
 				6588FF7627551C39007B045B /* ViewController.swift */,
+				65A78A5927565F9F00A19229 /* MainGame.swift */,
+				65A78A5B27565FAF00A19229 /* StatsScreen.swift */,
+				65A78A5D27565FC100A19229 /* RulesScreen.swift */,
+				65A78A5F27565FD100A19229 /* OptionsScreen.swift */,
 				6588FF7827551C39007B045B /* Main.storyboard */,
 				6588FF7E27551C3D007B045B /* Assets.xcassets */,
 				6588FF8027551C3D007B045B /* LaunchScreen.storyboard */,
@@ -143,8 +155,12 @@
 			files = (
 				6588FF7D27551C39007B045B /* blackjack.xcdatamodeld in Sources */,
 				6588FF7727551C39007B045B /* ViewController.swift in Sources */,
+				65A78A6027565FD100A19229 /* OptionsScreen.swift in Sources */,
 				6588FF7327551C39007B045B /* AppDelegate.swift in Sources */,
+				65A78A5C27565FAF00A19229 /* StatsScreen.swift in Sources */,
 				6588FF7527551C39007B045B /* SceneDelegate.swift in Sources */,
+				65A78A5E27565FC100A19229 /* RulesScreen.swift in Sources */,
+				65A78A5A27565F9F00A19229 /* MainGame.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

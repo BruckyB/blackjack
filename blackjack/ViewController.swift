@@ -7,6 +7,18 @@
 
 import UIKit
 
+class DataTransfer {
+    
+    static var darkMode = false
+    static var aces1 = false
+    static var infMoney = false
+    static var startingAmount = 100
+    
+}
+
+
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
