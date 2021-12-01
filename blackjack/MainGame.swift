@@ -34,6 +34,9 @@ class MainGame: UIViewController {
     
     
     
+    var cardArray : [String] = ["clubs_ace", "clubs_2", "clubs_3", "clubs_4", "clubs_5", "clubs_6", "clubs_7", "clubs_8", "clubs_9", "clubs_10", "clubs_jack", "clubs_queen", "clubs_king","diamonds_ace", "diamonds_2", "diamonds_3", "diamonds_4", "diamonds_5", "diamonds_6", "diamonds_7", "diamonds_8", "diamonds_9", "diamonds_10", "diamonds_jack", "diamonds_queen", "diamonds_king", "spades_ace", "spades_2", "spades_3", "spades_4", "spades_5", "spades_6", "spades_7", "spades_8", "spades_9", "spades_10", "spades_jack", "spades_queen", "spades_king", "hearts_ace", "hearts_2", "hearts_3", "hearts_4", "hearts_5", "hearts_6", "hearts_7", "hearts_8", "hearts_9", "hearts_10", "hearts_jack", "hearts_queen", "hearts_king"]
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -42,6 +45,9 @@ class MainGame: UIViewController {
     
 
     @IBAction func dealButton(_ sender: Any) {
+        var rand = Int.random(in: 0...51)
+        dCard1.image = UIImage(named: cardArray[rand])
+        dCard2.image = UIImage(named: "backofcard")
     }
     
     @IBAction func hitButton(_ sender: Any) {

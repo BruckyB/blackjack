@@ -15,6 +15,7 @@ class DataTransfer {
     static var infMoney = false
     static var startingAmount = 100
     
+    
 }
 
 
@@ -27,6 +28,9 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func playButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueToGame", sender: nil)
+    }
+    
 }
 
