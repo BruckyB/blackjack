@@ -31,7 +31,7 @@ class MainGame: UIViewController {
     @IBOutlet weak var uCard6: UIImageView!
     
     @IBOutlet weak var textField: UITextField!
-    
+    var userCount = 0
     
     
     var cardArray : [String] = ["clubs_ace", "clubs_2", "clubs_3", "clubs_4", "clubs_5", "clubs_6", "clubs_7", "clubs_8", "clubs_9", "clubs_10", "clubs_jack", "clubs_queen", "clubs_king","diamonds_ace", "diamonds_2", "diamonds_3", "diamonds_4", "diamonds_5", "diamonds_6", "diamonds_7", "diamonds_8", "diamonds_9", "diamonds_10", "diamonds_jack", "diamonds_queen", "diamonds_king", "spades_ace", "spades_2", "spades_3", "spades_4", "spades_5", "spades_6", "spades_7", "spades_8", "spades_9", "spades_10", "spades_jack", "spades_queen", "spades_king", "hearts_ace", "hearts_2", "hearts_3", "hearts_4", "hearts_5", "hearts_6", "hearts_7", "hearts_8", "hearts_9", "hearts_10", "hearts_jack", "hearts_queen", "hearts_king"]
@@ -45,6 +45,8 @@ class MainGame: UIViewController {
     
 
     @IBAction func dealButton(_ sender: Any) {
+        acceptable = false
+        userCount = 0
         var rand = Int.random(in: 0...51)
         dCard1.image = UIImage(named: cardArray[rand])
         dCard2.image = UIImage(named: "backofcard")
@@ -61,6 +63,7 @@ class MainGame: UIViewController {
                 acceptable = true
                 uCard1.image = UIImage(named: cardArray[rand])
                 noNoArray.append(rand)
+                addAmount(rand)
             }
         }
         acceptable = false
@@ -75,8 +78,12 @@ class MainGame: UIViewController {
             if check == true {
                 acceptable = true
                 uCard2.image = UIImage(named: cardArray[rand])
+                noNoArray.append(rand)
+                addAmount(rand)
             }
         }
+        
+        print(userCount)
         
         
     }
@@ -88,6 +95,36 @@ class MainGame: UIViewController {
     }
     
     @IBAction func betButton(_ sender: Any) {
+    }
+    
+    func addAmount(_ rand: Int) {
+        if rand == 0 || rand == 13 || rand == 26 || rand == 39 {
+            userCount = userCount + 1
+        } else if rand == 1 || rand == 14 || rand == 27 || rand == 40 {
+            userCount = userCount + 2
+        } else if rand == 2 || rand == 15 || rand == 28 || rand == 41 {
+            userCount = userCount + 3
+        } else if rand == 3 || rand == 16 || rand == 29 || rand == 42 {
+            userCount = userCount + 4
+        } else if rand == 4 || rand == 17 || rand == 30 || rand == 43 {
+            userCount = userCount + 5
+        } else if rand == 5 || rand == 18 || rand == 31 || rand == 44 {
+            userCount = userCount + 6
+        } else if rand == 6 || rand == 19 || rand == 32 || rand == 45 {
+            userCount = userCount + 7
+        } else if rand == 7 || rand == 20 || rand == 33 || rand == 46 {
+            userCount = userCount + 8
+        } else if rand == 8 || rand == 21 || rand == 34 || rand == 47 {
+            userCount = userCount + 9
+        } else if rand == 9 || rand == 22 || rand == 35 || rand == 48 {
+            userCount = userCount + 10
+        } else if rand == 10 || rand == 23 || rand == 36 || rand == 49 {
+            userCount = userCount + 11
+        } else if rand == 11 || rand == 24 || rand == 37 || rand == 50 {
+            userCount = userCount + 12
+        } else if rand == 12 || rand == 25 || rand == 38 || rand == 51 {
+            userCount = userCount + 13
+        }
     }
     
 }
