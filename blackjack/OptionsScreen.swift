@@ -9,6 +9,7 @@ import UIKit
 
 class OptionsScreen: UIViewController {
     
+    
     @IBOutlet weak var darkModeLabel: UILabel!
     
     @IBOutlet weak var infiniteMoneyLabel: UILabel!
@@ -17,9 +18,9 @@ class OptionsScreen: UIViewController {
     
     @IBOutlet weak var acesLabel: UILabel!
     
-    @IBOutlet weak var textField: UITextField!
+    @IBOutlet weak var customStartAmount: UITextField!
     
-    
+    var textFieldStr = ""
     
     
     
@@ -31,14 +32,24 @@ class OptionsScreen: UIViewController {
     }
     
     @IBAction func darkModeSwitch(_ sender: UISwitch) {
+        
     }
     
     @IBAction func moneySwitch(_ sender: UISwitch) {
     }
     
-    @IBAction func acesSwitch(_ sender: UISwitch) {
-    }
     
     @IBAction func setButton(_ sender: Any) {
+        if customStartAmount.text != nil {
+            textFieldStr = customStartAmount.text!
+            if Int(textFieldStr) != nil {
+                DataTransfer.startingAmount = Int(textFieldStr)!
+                print(DataTransfer.startingAmount)
+
+            } else {
+               // print("Not good")
+            }
+            
+        }
     }
 }

@@ -32,5 +32,16 @@ class ViewController: UIViewController {
         performSegue(withIdentifier: "segueToGame", sender: nil)
     }
     
+    @IBAction func statsButton(_ sender: Any) {
+    }
+    
+    @IBAction func rulesButton(_ sender: Any) {
+    }
+    
+    @IBAction func optionsButton(_ sender: Any) {
+        performSegue(withIdentifier:"segueToOptions", sender: nil)
+    }
+    
+    
 }
 
