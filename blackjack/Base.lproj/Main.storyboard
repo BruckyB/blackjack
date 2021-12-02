@@ -469,6 +469,20 @@
                                     <action selector="betButton:" destination="ho8-DG-aEg" eventType="touchUpInside" id="2dM-7Z-0Mq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WMM-5G-is8">
+                                <rect key="frame" x="330" y="470" width="64" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tUa-rZ-ye6">
+                                <rect key="frame" x="330" y="182" width="53" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQ3-AV-Dfb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -481,6 +495,7 @@
                         <outlet property="dCard4" destination="BHx-40-RqS" id="hRa-1W-QT9"/>
                         <outlet property="dCard5" destination="wlq-e4-ZfB" id="Ibf-px-Kxx"/>
                         <outlet property="dCard6" destination="fDB-cu-g53" id="Q1a-6T-6hr"/>
+                        <outlet property="dealerAmmount" destination="tUa-rZ-ye6" id="17U-MA-hb8"/>
                         <outlet property="dealerLabel" destination="RiL-TB-h3n" id="3wB-NZ-Qz0"/>
                         <outlet property="textField" destination="8kL-Fs-qcW" id="1em-yv-BKh"/>
                         <outlet property="uCard1" destination="7bW-kS-JYs" id="UQD-hd-VKf"/>
@@ -489,6 +504,7 @@
                         <outlet property="uCard4" destination="RJx-kA-arP" id="viR-ap-xnk"/>
                         <outlet property="uCard5" destination="3m0-oN-uSE" id="e5y-Sv-ktR"/>
                         <outlet property="uCard6" destination="4NQ-RF-c1M" id="ii7-AP-34b"/>
+                        <outlet property="userAmmount" destination="WMM-5G-is8" id="lvp-yk-Wnd"/>
                         <outlet property="userLabel" destination="INM-Ua-yrR" id="rFE-iM-awr"/>
                     </connections>
                 </viewController>

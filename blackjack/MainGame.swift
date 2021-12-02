@@ -14,6 +14,8 @@ class MainGame: UIViewController {
     
     
     @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var userAmmount: UILabel!
+    @IBOutlet weak var dealerAmmount: UILabel!
     
     @IBOutlet weak var dCard1: UIImageView!
     @IBOutlet weak var dCard2: UIImageView!
