@@ -15,9 +15,7 @@ class OptionsScreen: UIViewController {
     @IBOutlet weak var infiniteMoneyLabel: UILabel!
     
     @IBOutlet weak var startingAmountLabel: UILabel!
-    
-    @IBOutlet weak var acesLabel: UILabel!
-    
+        
     @IBOutlet weak var customStartAmount: UITextField!
     
     var textFieldStr = ""
@@ -32,10 +30,20 @@ class OptionsScreen: UIViewController {
     }
     
     @IBAction func darkModeSwitch(_ sender: UISwitch) {
-        
+        if ((sender as AnyObject).isOn == true) {
+            DataTransfer.darkMode = true
+        } else {
+            DataTransfer.darkMode = false
+        }
     }
     
     @IBAction func moneySwitch(_ sender: UISwitch) {
+        if((sender as AnyObject).isOn == true) {
+            DataTransfer.infMoney = true
+        } else {
+            DataTransfer.infMoney = false
+        }
+            
     }
     
     
