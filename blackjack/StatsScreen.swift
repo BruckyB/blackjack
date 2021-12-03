@@ -7,13 +7,23 @@
 
 import UIKit
 
-class StatsScreen: UIViewController {
-
+class StatsScreen: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    @IBOutlet weak var tableViewOutlet: UITableView!
+    static var data : [String] = []
     override func viewDidLoad() {
+        tableViewOutlet.delegate = self
+        tableViewOutlet.dataSource = self
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+       return StatsScreen.data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell")!
+    }
+
     
 
     /*
