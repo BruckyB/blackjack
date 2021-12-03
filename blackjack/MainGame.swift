@@ -53,6 +53,15 @@ class MainGame: UIViewController {
         acceptable = false
         userCount = 0
         dealerCount = 0
+        currentUCard = 3
+        uCard3.image = nil
+        uCard4.image = nil
+        uCard5.image = nil
+        uCard6.image = nil
+        dCard3.image = nil
+        dCard4.image = nil
+        dCard5.image = nil
+        dCard6.image = nil
         var rand = Int.random(in: 0...51)
         
         dCard1.image = UIImage(named: cardArray[rand])
@@ -123,10 +132,24 @@ class MainGame: UIViewController {
         }
         if check == true {
             acceptable = true
-            
-            uCard3.image = UIImage(named: cardArray[rand])
+            if currentUCard == 3 {
+                uCard3.image = UIImage(named: cardArray[rand])
+                currentUCard = 4
+            } else if currentUCard == 4 {
+                uCard4.image = UIImage(named: cardArray[rand])
+                currentUCard = 5
+            } else if currentUCard == 5 {
+                uCard5.image = UIImage(named: cardArray[rand])
+                currentUCard = 6
+            } else if currentUCard == 6 {
+                uCard6.image = UIImage(named: cardArray[rand])
+                currentUCard = 7
+            } else {
+                print("u done lol we out of card slots")
+            }
             noNoArray.append(rand)
             addAmmount(rand)
+            userAmmount.text = String(userCount)
         }
     }
     
