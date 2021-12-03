@@ -33,8 +33,10 @@ class MainGame: UIViewController {
     @IBOutlet weak var uCard6: UIImageView!
     
     @IBOutlet weak var textField: UITextField!
+    var gameOver = false
     var userCount = 0
     var dealerCount = 0
+    var currentUCard = 3
     
     
     var cardArray : [String] = ["clubs_ace", "clubs_2", "clubs_3", "clubs_4", "clubs_5", "clubs_6", "clubs_7", "clubs_8", "clubs_9", "clubs_10", "clubs_jack", "clubs_queen", "clubs_king","diamonds_ace", "diamonds_2", "diamonds_3", "diamonds_4", "diamonds_5", "diamonds_6", "diamonds_7", "diamonds_8", "diamonds_9", "diamonds_10", "diamonds_jack", "diamonds_queen", "diamonds_king", "spades_ace", "spades_2", "spades_3", "spades_4", "spades_5", "spades_6", "spades_7", "spades_8", "spades_9", "spades_10", "spades_jack", "spades_queen", "spades_king", "hearts_ace", "hearts_2", "hearts_3", "hearts_4", "hearts_5", "hearts_6", "hearts_7", "hearts_8", "hearts_9", "hearts_10", "hearts_jack", "hearts_queen", "hearts_king"]
@@ -50,6 +52,16 @@ class MainGame: UIViewController {
     @IBAction func dealButton(_ sender: Any) {
         acceptable = false
         userCount = 0
+        dealerCount = 0
+        currentUCard = 3
+        uCard3.image = nil
+        uCard4.image = nil
+        uCard5.image = nil
+        uCard6.image = nil
+        dCard3.image = nil
+        dCard4.image = nil
+        dCard5.image = nil
+        dCard6.image = nil
         var rand = Int.random(in: 0...51)
         
         dCard1.image = UIImage(named: cardArray[rand])
@@ -87,7 +99,22 @@ class MainGame: UIViewController {
                 addAmmount(rand)
             }
         }
-        
+        var status = checkGameStatus(userCount, dealerCount)
+        if status == 2 {
+            gameOver = true
+            print("You lose. Dealer Blackjack")
+        } else if status == 3 {
+            gameOver = true
+            print("You win. Dealer bust")
+        } else if status == 4 {
+            gameOver = true
+            print("You win. User Blackjack")
+        } else if status == 5 {
+            gameOver = true
+            print("You lose. User bust")
+        }  else if status == 1 {
+            print("active")
+        }
         userAmmount.text = String(userCount)
         dealerAmmount.text = String(dealerCount)
         
@@ -96,7 +123,34 @@ class MainGame: UIViewController {
     }
     
     @IBAction func hitButton(_ sender: Any) {
-        
+        var check = true
+        var rand = Int.random(in: 0...51)
+        for items in noNoArray {
+            if items == rand {
+                check = false
+            }
+        }
+        if check == true {
+            acceptable = true
+            if currentUCard == 3 {
+                uCard3.image = UIImage(named: cardArray[rand])
+                currentUCard = 4
+            } else if currentUCard == 4 {
+                uCard4.image = UIImage(named: cardArray[rand])
+                currentUCard = 5
+            } else if currentUCard == 5 {
+                uCard5.image = UIImage(named: cardArray[rand])
+                currentUCard = 6
+            } else if currentUCard == 6 {
+                uCard6.image = UIImage(named: cardArray[rand])
+                currentUCard = 7
+            } else {
+                print("u done lol we out of card slots")
+            }
+            noNoArray.append(rand)
+            addAmmount(rand)
+            userAmmount.text = String(userCount)
+        }
     }
     
     @IBAction func standButton(_ sender: Any) {
@@ -168,11 +222,18 @@ class MainGame: UIViewController {
     
     
     
-    func checkGameStatus(_ u: Int, _ d: Int) {
+    func checkGameStatus(_ u: Int, _ d: Int) -> Int {
+        //returns 1 for active game, 2 for dealer blackjack, 3 for delaer bust, 4 for user blackjack, 5 for user bust
         if d == 21 {
-            
+            return 2
         } else if d > 21 {
-            
+            return 3
+        } else if u == 21 {
+            return 4
+        } else if u > 21 {
+            return 5
+        } else {
+            return 1
         }
     }
     
