@@ -486,6 +486,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B72-pq-uEl">
+                                <rect key="frame" x="136" y="377" width="247" height="54"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQ3-AV-Dfb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -500,6 +507,7 @@
                         <outlet property="dCard6" destination="fDB-cu-g53" id="Q1a-6T-6hr"/>
                         <outlet property="dealerAmmount" destination="tUa-rZ-ye6" id="17U-MA-hb8"/>
                         <outlet property="dealerLabel" destination="RiL-TB-h3n" id="3wB-NZ-Qz0"/>
+                        <outlet property="statusLabel" destination="B72-pq-uEl" id="oc0-5J-3nQ"/>
                         <outlet property="textField" destination="8kL-Fs-qcW" id="1em-yv-BKh"/>
                         <outlet property="uCard1" destination="7bW-kS-JYs" id="UQD-hd-VKf"/>
                         <outlet property="uCard2" destination="BW4-af-1if" id="DVo-Tf-Qrf"/>
