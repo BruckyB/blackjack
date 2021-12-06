@@ -42,6 +42,7 @@ class MainGame: UIViewController {
     var currentUCard = 3
     var currentDealerCard = 2
     var activeGame = false
+    var bet = 0
     
     
     
@@ -254,6 +255,10 @@ class MainGame: UIViewController {
     }
     
     @IBAction func betButton(_ sender: Any) {
+        
+        bet = Int(textField.text!)!
+            
+        
     }
     
     func addAmmount(_ rand: Int) {
