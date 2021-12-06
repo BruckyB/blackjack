@@ -15,11 +15,9 @@ class DataTransfer {
     static var infMoney = false
     static var startingAmount = 100
     static var win = false
-    static var bust = false 
+    static var bust = false
     
 }
-
-
 
 
 class ViewController: UIViewController {
@@ -34,9 +32,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func statsButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueToStats", sender: nil)
     }
     
     @IBAction func rulesButton(_ sender: Any) {
+        performSegue(withIdentifier: "segueToRules", sender: nil)
     }
     
     @IBAction func optionsButton(_ sender: Any) {

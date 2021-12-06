@@ -35,6 +35,14 @@ class OptionsScreen: UIViewController {
         } else {
             DataTransfer.darkMode = false
         }
+        if DataTransfer.darkMode == true {
+            // Turn on darkmode
+            self.view.backgroundColor = UIColor.black
+            darkModeLabel.backgroundColor = UIColor.white
+        } else {
+            print("Test")
+            // Turn off darkmode
+        }
     }
     
     @IBAction func moneySwitch(_ sender: UISwitch) {
