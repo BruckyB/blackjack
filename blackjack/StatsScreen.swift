@@ -22,6 +22,7 @@ class StatsScreen: UIViewController, UITableViewDelegate, UITableViewDataSource 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell")!
+        cell.textLabel?.text = StatsScreen.data[indexPath.row]
         return cell 
     }
 
