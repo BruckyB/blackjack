@@ -14,7 +14,8 @@ class DataTransfer {
     static var aces1 = false
     static var infMoney = false
     static var startingAmount = 100
-    
+    static var win = false
+    static var bust = false 
     
 }
 
