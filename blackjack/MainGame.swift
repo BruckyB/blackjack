@@ -12,6 +12,8 @@ class MainGame: UIViewController {
     
     @IBOutlet weak var dealerLabel: UILabel!
     
+    @IBOutlet weak var currentBetLabel: UILabel!
+    @IBOutlet weak var currentBalanceLabel: UILabel!
     
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userAmmount: UILabel!
@@ -43,6 +45,7 @@ class MainGame: UIViewController {
     var currentDealerCard = 2
     var activeGame = false
     var bet = 0
+    var currentAmount = DataTransfer.startingAmount
     
     
     
@@ -52,6 +55,8 @@ class MainGame: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         statusLabel.textColor = UIColor.red
+        currentBetLabel.text = "Current Bet: \(bet)"
+        currentBalanceLabel.text = "Current Balance: \(currentAmount)"
         // Do any additional setup after loading the view.
     }
     
@@ -255,10 +260,10 @@ class MainGame: UIViewController {
     }
     
     @IBAction func betButton(_ sender: Any) {
-        
+        if Int(textField.text!)! <= currentAmount {
         bet = Int(textField.text!)!
-            
-        
+        currentBetLabel.text = "Current Bet: \(bet)"
+        }
     }
     
     func addAmmount(_ rand: Int) {

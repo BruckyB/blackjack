@@ -493,12 +493,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Balance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="e11-Ph-dxo">
+                                <rect key="frame" x="219" y="113" width="218" height="29"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Current Bet:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRE-4O-WgJ">
+                                <rect key="frame" x="219" y="73" width="131" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OQ3-AV-Dfb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="9Ol-3g-mYo"/>
                     <connections>
+                        <outlet property="currentBalanceLabel" destination="e11-Ph-dxo" id="lgF-fg-Cp8"/>
+                        <outlet property="currentBetLabel" destination="bRE-4O-WgJ" id="wM8-Og-ZKN"/>
                         <outlet property="dCard1" destination="bBp-ZT-w1C" id="Dqd-4s-FsK"/>
                         <outlet property="dCard2" destination="3Gb-be-TAU" id="tc7-j1-Vuc"/>
                         <outlet property="dCard3" destination="0On-W8-LFB" id="KQJ-rO-iIM"/>
