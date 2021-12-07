@@ -248,6 +248,9 @@ class MainGame: UIViewController {
                 noNoArray.append(rand)
                 addDealerAmmount(rand)
                 dealerAmmount.text = String(dealerCount)
+                if dealerCount > 21 {
+                    acceptable = true
+                }
             }
         }
         acceptable = false
@@ -302,11 +305,11 @@ class MainGame: UIViewController {
         } else if rand == 9 || rand == 22 || rand == 35 || rand == 48 {
             userCount = userCount + 10
         } else if rand == 10 || rand == 23 || rand == 36 || rand == 49 {
-            userCount = userCount + 11
+            userCount = userCount + 10
         } else if rand == 11 || rand == 24 || rand == 37 || rand == 50 {
-            userCount = userCount + 12
+            userCount = userCount + 10
         } else if rand == 12 || rand == 25 || rand == 38 || rand == 51 {
-            userCount = userCount + 13
+            userCount = userCount + 10
         }
     }
     
@@ -332,11 +335,11 @@ class MainGame: UIViewController {
         } else if rand == 9 || rand == 22 || rand == 35 || rand == 48 {
             dealerCount = dealerCount + 10
         } else if rand == 10 || rand == 23 || rand == 36 || rand == 49 {
-            dealerCount = dealerCount + 11
+            dealerCount = dealerCount + 10
         } else if rand == 11 || rand == 24 || rand == 37 || rand == 50 {
-            dealerCount = dealerCount + 12
+            dealerCount = dealerCount + 10
         } else if rand == 12 || rand == 25 || rand == 38 || rand == 51 {
-            dealerCount = dealerCount + 13
+            dealerCount = dealerCount + 10
         }
     }
     
