@@ -36,8 +36,6 @@ class MainGame: UIViewController {
     @IBOutlet weak var uCard6: UIImageView!
     
     @IBOutlet weak var textField: UITextField!
-    var win = false
-    var loss = false
     var gameOver = false
     var userCount = 0
     var dealerCount = 0
@@ -62,22 +60,31 @@ class MainGame: UIViewController {
     
 
     @IBAction func dealButton(_ sender: Any) {
+        noNoArray = []
         acceptable = false
         activeGame = true
         userCount = 0
         dealerCount = 0
         currentUCard = 3
         currentDealerCard = 2
+        uCard1.image = nil
+        uCard2.image = nil
         uCard3.image = nil
         uCard4.image = nil
         uCard5.image = nil
         uCard6.image = nil
+        dCard1.image = nil
+        dCard2.image = nil
         dCard3.image = nil
         dCard4.image = nil
         dCard5.image = nil
         dCard6.image = nil
         statusLabel.text = ""
         var rand = Int.random(in: 0...51)
+        if currentAmount < bet {
+            statusLabel.text = "Bet is too high, please lower"
+        } else {
+        
         
         dCard1.image = UIImage(named: cardArray[rand])
         addDealerAmmount(rand)
@@ -119,17 +126,19 @@ class MainGame: UIViewController {
         if status == 2 {
             activeGame = false
             print("You lose. Dealer Blackjack")
-            loss = true
+            lose()
         } else if status == 3 {
             activeGame = false
             print("You win. Dealer bust")
+            win()
         } else if status == 4 {
             activeGame = false
             statusLabel.text = "You win! User Blackjack"
+            win()
         } else if status == 5 {
             activeGame = false
             statusLabel.text = "You lose! User bust"
-            loss = true
+            lose()
 
         }  else if status == 1 {
             print("active")
@@ -138,7 +147,7 @@ class MainGame: UIViewController {
         dealerAmmount.text = String(dealerCount)
         
         
-        
+        }
     }
     
     @IBAction func hitButton(_ sender: Any) {
@@ -178,18 +187,20 @@ class MainGame: UIViewController {
             if status == 2 {
                 activeGame = false
                 print("You lose. Dealer Blackjack")
-                loss = true
+                lose()
 
             } else if status == 3 {
                 activeGame = false
                 print("You win. Dealer bust")
+                win()
             } else if status == 4 {
                 activeGame = false
                 statusLabel.text = "You win! User Blackjack"
+                win()
             } else if status == 5 {
                 activeGame = false
                 statusLabel.text = "You lose! User bust"
-                loss = true
+                lose()
 
             }  else if status == 1 {
                 print("active")
@@ -232,6 +243,7 @@ class MainGame: UIViewController {
                     statusLabel.text = ""
                 } else {
                     statusLabel.text = "You Win! Dealer ran out of card slots"
+                    win()
                 }
                 noNoArray.append(rand)
                 addDealerAmmount(rand)
@@ -244,13 +256,13 @@ class MainGame: UIViewController {
             if dealerCount > userCount {
                 if dealerCount < 21 {
                     statusLabel.text = "You Lose! Dealer has higher number"
-                    loss = true
+                    lose()
                 } else if dealerCount == 21 {
                     statusLabel.text = "You lose! Dealer Blackjack"
-                    loss = true
+                    lose()
                 } else {
                     statusLabel.text = "You Win! Dealer busted"
-                    win = true
+                    win()
                 }
                 
                 activeGame = false
@@ -263,6 +275,8 @@ class MainGame: UIViewController {
         if Int(textField.text!)! <= currentAmount {
         bet = Int(textField.text!)!
         currentBetLabel.text = "Current Bet: \(bet)"
+        } else {
+        statusLabel.text = "Bet is too high, please lower"
         }
     }
     
@@ -326,7 +340,14 @@ class MainGame: UIViewController {
         }
     }
     
-    
+    func win(){
+        currentAmount = currentAmount + bet
+        currentBalanceLabel.text = "Current Balance: \(currentAmount)"
+    }
+    func lose(){
+        currentAmount = currentAmount - bet
+        currentBalanceLabel.text = "Current Balance: \(currentAmount)"
+    }
     
     
     func checkGameStatus(_ u: Int, _ d: Int) -> Int {
