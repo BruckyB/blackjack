@@ -11,6 +11,10 @@ class StatsScreen: UIViewController, UITableViewDelegate, UITableViewDataSource 
     @IBOutlet weak var tableViewOutlet: UITableView!
     static var data : [String] = []
     override func viewDidLoad() {
+        if DataTransfer.darkMode == true {
+            self.view.backgroundColor = UIColor.black
+            tableViewOutlet.backgroundColor = UIColor.black
+        }
         tableViewOutlet.delegate = self
         tableViewOutlet.dataSource = self
         super.viewDidLoad()
@@ -23,6 +27,9 @@ class StatsScreen: UIViewController, UITableViewDelegate, UITableViewDataSource 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableViewOutlet.dequeueReusableCell(withIdentifier: "myCell")!
         cell.textLabel?.text = StatsScreen.data[indexPath.row]
+        if DataTransfer.darkMode == true {
+            cell.textLabel?.textColor = UIColor.white
+        }
         return cell 
     }
 

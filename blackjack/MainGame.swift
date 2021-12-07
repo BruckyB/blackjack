@@ -18,7 +18,7 @@ class MainGame: UIViewController {
     @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var userAmmount: UILabel!
     @IBOutlet weak var dealerAmmount: UILabel!
-    @IBOutlet weak var statusLabel: UILabel!
+    @IBOutlet weak var statusLabel: UILabel! // Don't change for dark mode
     
     @IBOutlet weak var dCard1: UIImageView!
     @IBOutlet weak var dCard2: UIImageView!
@@ -53,6 +53,15 @@ class MainGame: UIViewController {
     var noNoArray : [Int] = []
     var acceptable = false
     override func viewDidLoad() {
+        if DataTransfer.darkMode == true {
+            self.view.backgroundColor = UIColor.black
+            dealerLabel.textColor = UIColor.white
+            currentBalanceLabel.textColor = UIColor.white
+            currentBetLabel.textColor  = UIColor.white
+            userLabel.textColor = UIColor.white
+            userAmmount.textColor = UIColor.white
+            dealerAmmount.textColor = UIColor.white
+        }
         super.viewDidLoad()
         statusLabel.textColor = UIColor.red
         currentBetLabel.text = "Current Bet: \(bet)"
@@ -123,12 +132,15 @@ class MainGame: UIViewController {
         } else if status == 3 {
             activeGame = false
             print("You win. Dealer bust")
+            StatsScreen.data.append("You win. Dealer bust")
         } else if status == 4 {
             activeGame = false
             statusLabel.text = "You win! User Blackjack"
+            StatsScreen.data.append("You win! You got Blackjack")
         } else if status == 5 {
             activeGame = false
             statusLabel.text = "You lose! User bust"
+            StatsScreen.data.append("You lose! User bust")
             loss = true
 
         }  else if status == 1 {
@@ -178,17 +190,21 @@ class MainGame: UIViewController {
             if status == 2 {
                 activeGame = false
                 print("You lose. Dealer Blackjack")
+                StatsScreen.data.append("You lose. Dealer Blackjack")
                 loss = true
 
             } else if status == 3 {
                 activeGame = false
                 print("You win. Dealer bust")
+                StatsScreen.data.append("You win. Dealer bust")
             } else if status == 4 {
                 activeGame = false
                 statusLabel.text = "You win! User Blackjack"
+                StatsScreen.data.append("You win! User Blackjack")
             } else if status == 5 {
                 activeGame = false
                 statusLabel.text = "You lose! User bust"
+                StatsScreen.data.append("You lose! User bust")
                 loss = true
 
             }  else if status == 1 {
@@ -232,6 +248,7 @@ class MainGame: UIViewController {
                     statusLabel.text = ""
                 } else {
                     statusLabel.text = "You Win! Dealer ran out of card slots"
+                    StatsScreen.data.append("You win! Dealer ran out of card slots")
                 }
                 noNoArray.append(rand)
                 addDealerAmmount(rand)

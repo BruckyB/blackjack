@@ -9,7 +9,6 @@ import UIKit
 
 class OptionsScreen: UIViewController {
     
-    
     @IBOutlet weak var darkModeLabel: UILabel!
     
     @IBOutlet weak var infiniteMoneyLabel: UILabel!
@@ -24,6 +23,12 @@ class OptionsScreen: UIViewController {
     
     
     override func viewDidLoad() {
+        if DataTransfer.darkMode == true {
+            self.view.backgroundColor = UIColor.black
+            darkModeLabel.textColor = UIColor.white
+            infiniteMoneyLabel.textColor = UIColor.white
+            startingAmountLabel.textColor = UIColor.white
+        }
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
@@ -38,10 +43,15 @@ class OptionsScreen: UIViewController {
         if DataTransfer.darkMode == true {
             // Turn on darkmode
             self.view.backgroundColor = UIColor.black
-            darkModeLabel.backgroundColor = UIColor.white
+            darkModeLabel.textColor = UIColor.white
+            infiniteMoneyLabel.textColor = UIColor.white
+            startingAmountLabel.textColor = UIColor.white
         } else {
-            print("Test")
             // Turn off darkmode
+            self.view.backgroundColor = UIColor.white
+            darkModeLabel.textColor = UIColor.black
+            infiniteMoneyLabel.textColor = UIColor.black
+            startingAmountLabel.textColor = UIColor.black
         }
     }
     

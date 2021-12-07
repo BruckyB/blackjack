@@ -10,12 +10,10 @@ import UIKit
 //john 
 class DataTransfer {
     
-    static var darkMode = false
+    static var darkMode = false 
     static var aces1 = false
     static var infMoney = false
     static var startingAmount = 100
-    static var win = false
-    static var bust = false
     
 }
 
@@ -24,6 +22,9 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        if DataTransfer.darkMode == true {
+        self.view.backgroundColor = UIColor.black
+        }
         // Do any additional setup after loading the view.
     }
 
