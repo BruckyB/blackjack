@@ -190,21 +190,17 @@ class MainGame: UIViewController {
             if status == 2 {
                 activeGame = false
                 print("You lose. Dealer Blackjack")
-                StatsScreen.data.append("You lose. Dealer Blackjack")
                 loss = true
 
             } else if status == 3 {
                 activeGame = false
                 print("You win. Dealer bust")
-                StatsScreen.data.append("You win. Dealer bust")
             } else if status == 4 {
                 activeGame = false
                 statusLabel.text = "You win! User Blackjack"
-                StatsScreen.data.append("You win! User Blackjack")
             } else if status == 5 {
                 activeGame = false
                 statusLabel.text = "You lose! User bust"
-                StatsScreen.data.append("You lose! User bust")
                 loss = true
 
             }  else if status == 1 {
@@ -248,7 +244,6 @@ class MainGame: UIViewController {
                     statusLabel.text = ""
                 } else {
                     statusLabel.text = "You Win! Dealer ran out of card slots"
-                    StatsScreen.data.append("You win! Dealer ran out of card slots")
                 }
                 noNoArray.append(rand)
                 addDealerAmmount(rand)

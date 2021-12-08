@@ -51,7 +51,7 @@ class OptionsScreen: UIViewController {
             self.view.backgroundColor = UIColor.white
             darkModeLabel.textColor = UIColor.black
             infiniteMoneyLabel.textColor = UIColor.black
-            startingAmountLabel.textColor = UIColor.black
+            startingAmountLabel.textColor = UIColor.white 
         }
     }
     
