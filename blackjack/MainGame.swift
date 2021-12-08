@@ -256,20 +256,21 @@ class MainGame: UIViewController {
         acceptable = false
             
             var status = checkGameStatus(userCount, dealerCount)
-            if dealerCount > userCount {
-                if dealerCount < 21 {
-                    statusLabel.text = "You Lose! Dealer has higher number"
-                    lose()
-                } else if dealerCount == 21 {
-                    statusLabel.text = "You lose! Dealer Blackjack"
+            
+            if dealerCount > 16 {
+                if dealerCount > 21 {
+                    statusLabel.text = "You Win! Dealer busted"
+                    win()
+                } else if dealerCount > userCount {
+                    statusLabel.text = "You lose! Dealer has a higher number"
                     lose()
                 } else {
-                    statusLabel.text = "You Win! Dealer busted"
+                    statusLabel.text = "You win! Dealers number is too low"
                     win()
                 }
                 
                 activeGame = false
-            
+                
             }
         }
     }
