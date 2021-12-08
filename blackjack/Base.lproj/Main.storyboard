@@ -445,7 +445,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Hit"/>
                                 <connections>
-                                    <action selector="hitButton:" destination="ho8-DG-aEg" eventType="touchUpInside" id="LK3-BV-yoX"/>
+                                    <action selector="hitButton:" destination="ho8-DG-aEg" eventType="touchUpInside" id="QRF-Lg-r9Y"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CWO-Tt-XXw">

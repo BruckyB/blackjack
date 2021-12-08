@@ -145,8 +145,6 @@ class MainGame: UIViewController {
         } else if status == 5 {
             win()
             statusLabel.text = "You lose! User bust"
-            loss = true
-
             lose()
         }
         userAmmount.text = String(userCount)
@@ -156,8 +154,9 @@ class MainGame: UIViewController {
         }
     }
     
-        }
-        if currentUCard < 7 && activeGame == true{
+        
+    @IBAction func hitButton(_ sender: Any) {
+    if currentUCard < 7 && activeGame == true{
         var check = true
         var rand = Int.random(in: 0...51)
         for items in noNoArray {
@@ -353,10 +352,12 @@ class MainGame: UIViewController {
     func win(){
         currentAmount = currentAmount + bet
         currentBalanceLabel.text = "Current Balance: \(currentAmount)"
+        StatsScreen.data.append("You win! Balance: \(currentAmount)")
     }
     func lose(){
         currentAmount = currentAmount - bet
         currentBalanceLabel.text = "Current Balance: \(currentAmount)"
+        StatsScreen.data.append("You lost. Balance: \(currentAmount)")
     }
     
     
