@@ -7,7 +7,8 @@
 
 // hello - Harrison
 import UIKit
-//john 
+//john
+
 class DataTransfer {
     
     static var darkMode = false 
@@ -19,11 +20,26 @@ class DataTransfer {
 
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
+    @IBOutlet weak var blackjackLabel: UILabel!
+    @IBOutlet weak var playButCol: UIButton!
+    @IBOutlet weak var statsButCol: UIButton!
+    @IBOutlet weak var rulesButCol: UIButton!
+    @IBOutlet weak var optButCol: UIButton!
+    
+    override func viewDidAppear(_ animated: Bool) {
         if DataTransfer.darkMode == true {
             self.view.backgroundColor = UIColor.black
+            blackjackLabel.textColor = UIColor.white
+            playButCol.backgroundColor = UIColor.white
+            statsButCol.backgroundColor = UIColor.white
+            rulesButCol.backgroundColor = UIColor.white
+            optButCol.backgroundColor = UIColor.white
+        } else {
+            self.view.backgroundColor = UIColor.white
+            blackjackLabel.textColor = UIColor.black 
         }
+    }
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
         // Do any additional setup after loading the view.

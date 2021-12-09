@@ -19,7 +19,9 @@ class OptionsScreen: UIViewController {
     
     var textFieldStr = ""
     
+    @IBOutlet weak var darkSwitch: UISwitch!
     
+    @IBOutlet weak var infMonSwitch: UISwitch!
     
     
     override func viewDidLoad() {
@@ -28,6 +30,12 @@ class OptionsScreen: UIViewController {
             darkModeLabel.textColor = UIColor.white
             infiniteMoneyLabel.textColor = UIColor.white
             startingAmountLabel.textColor = UIColor.white
+        }
+        if DataTransfer.darkMode == true {
+            darkSwitch.setOn(true, animated: true)
+        }
+        if DataTransfer.infMoney == true {
+            infMonSwitch.setOn(true, animated: true)
         }
         super.viewDidLoad()
 
