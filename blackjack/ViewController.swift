@@ -21,12 +21,13 @@ class DataTransfer {
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
-        super.viewDidLoad()
         if DataTransfer.darkMode == true {
-        self.view.backgroundColor = UIColor.black
+            self.view.backgroundColor = UIColor.black
         }
-        // Do any additional setup after loading the view.
+        super.viewDidLoad()
     }
+        // Do any additional setup after loading the view.
+    
 
     @IBAction func playButton(_ sender: Any) {
         performSegue(withIdentifier: "segueToGame", sender: nil)
