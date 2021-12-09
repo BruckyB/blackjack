@@ -69,6 +69,7 @@ class MainGame: UIViewController {
     
 
     @IBAction func dealButton(_ sender: Any) {
+        if bet != 0 {
         noNoArray = []
         acceptable = false
         activeGame = true
@@ -150,7 +151,9 @@ class MainGame: UIViewController {
         userAmmount.text = String(userCount)
         dealerAmmount.text = String(dealerCount)
         
-        
+        }
+        } else {
+            statusLabel.text = "Please bet some money"
         }
     }
     
@@ -269,6 +272,9 @@ class MainGame: UIViewController {
                 } else if dealerCount > userCount {
                     statusLabel.text = "You lose! Dealer has a higher number"
                     lose()
+                } else if dealerCount == userCount {
+                    statusLabel.text = "Tie! Dealer and user have the same number"
+                    tie()
                 } else {
                     statusLabel.text = "You win! Dealers number is too low"
                     win()
@@ -281,13 +287,17 @@ class MainGame: UIViewController {
     }
     
     @IBAction func betButton(_ sender: Any) {
-        if activeGame == true {
-        if Int(textField.text!)! <= currentAmount {
-        bet = Int(textField.text!)!
-        currentBetLabel.text = "Current Bet: \(bet)"
-        } else {
-        statusLabel.text = "Bet is too high, please lower"
-        }
+        if activeGame == false {
+            if Int(textField.text!)! <= currentAmount {
+                if Int(textField.text!)! == 0 && currentAmount != 0 {
+                    statusLabel.text = "Please bet some money"
+                } else {
+                    bet = Int(textField.text!)!
+                    currentBetLabel.text = "Current Bet: \(bet)"
+                }
+                } else {
+                    statusLabel.text = "Bet is too high, please lower"
+            }
         }
     }
     
@@ -360,6 +370,13 @@ class MainGame: UIViewController {
         currentAmount = currentAmount - bet
         currentBalanceLabel.text = "Current Balance: \(currentAmount)"
         StatsScreen.data.append("You lost. Balance: \(currentAmount)")
+        if currentAmount == 0 {
+            statusLabel.text = "You have ran out of money. Added 10 dollars"
+            currentAmount = 10
+        }
+    }
+    func tie(){
+        StatsScreen.data.append("Tie game. Balance: \(currentAmount)")
     }
     
     
