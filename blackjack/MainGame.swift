@@ -281,11 +281,13 @@ class MainGame: UIViewController {
     }
     
     @IBAction func betButton(_ sender: Any) {
+        if activeGame == true {
         if Int(textField.text!)! <= currentAmount {
         bet = Int(textField.text!)!
         currentBetLabel.text = "Current Bet: \(bet)"
         } else {
         statusLabel.text = "Bet is too high, please lower"
+        }
         }
     }
     
