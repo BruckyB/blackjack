@@ -17,6 +17,9 @@ class OptionsScreen: UIViewController {
         
     @IBOutlet weak var customStartAmount: UITextField!
     
+    
+    @IBOutlet weak var errorLabel: UILabel!
+    
     var textFieldStr = ""
     
     @IBOutlet weak var darkSwitch: UISwitch!

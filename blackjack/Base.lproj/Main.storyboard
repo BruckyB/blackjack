@@ -307,6 +307,18 @@
                                     <action selector="setButton:" destination="eh3-xX-tRc" eventType="touchUpInside" id="Ra5-YL-adT"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBR-uA-dmR">
+                                <rect key="frame" x="76" y="483" width="173" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <attributedString key="attributedText">
+                                    <fragment content="Label">
+                                        <attributes>
+                                            <font key="NSFont" size="17" name="AvenirNext-Regular"/>
+                                        </attributes>
+                                    </fragment>
+                                </attributedString>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="X2o-zr-IY6"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -316,6 +328,7 @@
                         <outlet property="customStartAmount" destination="PcT-6T-hTi" id="e7S-VB-Lbv"/>
                         <outlet property="darkModeLabel" destination="6MN-Ny-VHm" id="eHg-CS-iSQ"/>
                         <outlet property="darkSwitch" destination="lro-iQ-4MT" id="Ekn-WU-VQz"/>
+                        <outlet property="errorLabel" destination="BBR-uA-dmR" id="JtT-Qs-Fo8"/>
                         <outlet property="infMonSwitch" destination="nnf-2H-WlK" id="veS-ed-Ly7"/>
                         <outlet property="infiniteMoneyLabel" destination="yST-3H-zRO" id="NRS-SZ-ojw"/>
                         <outlet property="startingAmountLabel" destination="Yt1-yO-EBh" id="XNi-0u-qJi"/>
