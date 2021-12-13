@@ -16,7 +16,7 @@ class RulesScreen: UIViewController {
             textView.textColor = UIColor.white
             textView.backgroundColor = UIColor.black 
         }
-        textView.text = "CHICAGO RULES:\n1. Aces are worth 1\n2. Dealer can deal up to 17\n3. A player is allowed to hit unless they reach 21, which the player has got blackjack\n3b. If the dealer busts (over 21), the player wins.\n3c. If the player busts, the dealer wins."
+        textView.text = "CHICAGO RULES:\n1. Aces are worth 1\n2. Dealer can deal up to 17\n3. A player is allowed to hit unless they reach 21, which the player has got blackjack\n3b. If the dealer busts (over 21), the player wins.\n3c. If the player busts, the dealer wins.\n4. Jacks, Kings, and Queens are worth 10"
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.

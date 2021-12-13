@@ -17,7 +17,6 @@ class OptionsScreen: UIViewController {
         
     @IBOutlet weak var customStartAmount: UITextField!
     
-    
     @IBOutlet weak var errorLabel: UILabel!
     
     var textFieldStr = ""
@@ -32,7 +31,10 @@ class OptionsScreen: UIViewController {
             self.view.backgroundColor = UIColor.black
             darkModeLabel.textColor = UIColor.white
             infiniteMoneyLabel.textColor = UIColor.white
-            startingAmountLabel.textColor = UIColor.white
+            startingAmountLabel.textColor = UIColor.black
+            
+        } else {
+            errorLabel.textColor = UIColor.white
         }
         if DataTransfer.darkMode == true {
             darkSwitch.setOn(true, animated: true)
@@ -57,12 +59,14 @@ class OptionsScreen: UIViewController {
             darkModeLabel.textColor = UIColor.white
             infiniteMoneyLabel.textColor = UIColor.white
             startingAmountLabel.textColor = UIColor.white
+            errorLabel.textColor = UIColor.black
         } else {
             // Turn off darkmode
             self.view.backgroundColor = UIColor.white
             darkModeLabel.textColor = UIColor.black
             infiniteMoneyLabel.textColor = UIColor.black
-            startingAmountLabel.textColor = UIColor.white 
+            startingAmountLabel.textColor = UIColor.white
+            errorLabel.textColor = UIColor.white
         }
     }
     
@@ -82,9 +86,17 @@ class OptionsScreen: UIViewController {
             if Int(textFieldStr) != nil {
                 DataTransfer.startingAmount = Int(textFieldStr)!
                 print(DataTransfer.startingAmount)
-
+                if DataTransfer.darkMode == true {
+                    errorLabel.textColor = UIColor.white
+                    errorLabel.text = "New Starting Amount Saved"
+                } else {
+                    errorLabel.textColor = UIColor.black
+                    errorLabel.text = "New Starting Amount Saved"
+                }
             } else {
-               // print("Not good")
+                errorLabel.text = "Error: Invalid Number Entered"
+                errorLabel.textColor = UIColor.red
+     
             }
             
         }
