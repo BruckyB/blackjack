@@ -42,7 +42,7 @@ class MainGame: UIViewController {
     var currentUCard = 3
     var currentDealerCard = 2
     var activeGame = false
-    var bet = 0
+    var bet = 5
     var currentAmount = DataTransfer.startingAmount
     
     
@@ -373,6 +373,9 @@ class MainGame: UIViewController {
         if currentAmount == 0 {
             statusLabel.text = "You have ran out of money. Added 10 dollars"
             currentAmount = 10
+            currentBalanceLabel.text = "Current Balance: \(currentAmount)"
+            bet = 5
+            currentBetLabel.text = "Current Bet: \(bet)"
         }
     }
     func tie(){
