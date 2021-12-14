@@ -365,6 +365,7 @@ class MainGame: UIViewController {
         currentAmount = currentAmount + bet
         currentBalanceLabel.text = "Current Balance: \(currentAmount)"
         StatsScreen.data.append("You win! Balance: \(currentAmount)")
+       // print(StatsScreen.data.count)
     }
     func lose(){
         currentAmount = currentAmount - bet
@@ -377,9 +378,11 @@ class MainGame: UIViewController {
             bet = 5
             currentBetLabel.text = "Current Bet: \(bet)"
         }
+       // print(StatsScreen.data.count)
     }
     func tie(){
         StatsScreen.data.append("Tie game. Balance: \(currentAmount)")
+        //print(StatsScreen.data.count)
     }
     
     
@@ -397,5 +400,7 @@ class MainGame: UIViewController {
             return 1
         }
     }
+    
+    
     
 }
